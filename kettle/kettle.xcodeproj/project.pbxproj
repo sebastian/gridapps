@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C4DEDCC15A729D000F92990 /* teakettle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C4DEDCB15A729D000F92990 /* teakettle.wav */; };
 		0CB9E0AB15A6F5D60076F8C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9E0AA15A6F5D60076F8C7 /* UIKit.framework */; };
 		0CB9E0AD15A6F5D60076F8C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9E0AC15A6F5D60076F8C7 /* Foundation.framework */; };
 		0CB9E0AF15A6F5D60076F8C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9E0AE15A6F5D60076F8C7 /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C4DEDCB15A729D000F92990 /* teakettle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = teakettle.wav; sourceTree = "<group>"; };
 		0CB9E0A615A6F5D60076F8C7 /* kettle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kettle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB9E0AA15A6F5D60076F8C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0CB9E0AC15A6F5D60076F8C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,6 +45,7 @@
 		0CB9E0D415A6F8500076F8C7 /* GridMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridMonitor.h; sourceTree = "<group>"; };
 		0CB9E0D515A6F8500076F8C7 /* GridMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridMonitor.m; sourceTree = "<group>"; };
 		0CB9E0D815A702F60076F8C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0CC9D51D15A72A3C007C712B /* audio-source.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "audio-source.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 		0CB9E0B115A6F5D60076F8C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0CC9D51D15A72A3C007C712B /* audio-source.txt */,
+				0C4DEDCB15A729D000F92990 /* teakettle.wav */,
 				0CB9E0B215A6F5D60076F8C7 /* kettle-Info.plist */,
 				0CB9E0B315A6F5D60076F8C7 /* InfoPlist.strings */,
 				0CB9E0B615A6F5D60076F8C7 /* main.m */,
@@ -173,6 +178,7 @@
 				0CB9E0C415A6F5D60076F8C7 /* MainViewController_iPhone.xib in Resources */,
 				0CB9E0C715A6F5D60076F8C7 /* MainViewController_iPad.xib in Resources */,
 				0CB9E0CA15A6F5D60076F8C7 /* FlipsideViewController.xib in Resources */,
+				0C4DEDCC15A729D000F92990 /* teakettle.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

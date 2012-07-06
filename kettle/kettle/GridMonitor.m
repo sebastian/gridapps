@@ -31,13 +31,47 @@
 
 - (void) startMonitor
 {
-  BOOL state = NO;
+  BOOL hasReportedFaultyConnection = NO;
   while (monitorRunning) {
-    state = !state;
-    dispatch_async(dispatch_get_main_queue(), ^{
-      _callback(state);
-    });
-    sleep(10);
+    // Get the state from the webserver
+    NSURL *url = [NSURL URLWithString:@"http://home.elsmorian.com:8080/json"];
+    NSData *jsonData = [NSData dataWithContentsOfURL:url];
+    NSError *jsonError;
+    if (jsonData != nil) {
+      NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&jsonError];
+      if (jsonError) {
+        NSLog(@"ERROR: Failed at reading the JSON data");
+        if (!hasReportedFaultyConnection) {
+          hasReportedFaultyConnection = YES;
+          [[[UIAlertView alloc] initWithTitle:@"Oh my" 
+                                      message:@"Something seems to be terribly wrong at the moment. Maybe try again later?" 
+                                     delegate:nil 
+                            cancelButtonTitle:nil 
+                            otherButtonTitles:@"Ok", nil] show];
+        }
+      } else {
+        BOOL shouldMakeTea;
+        if ([[json objectForKey:@"instruction"] isEqualToString:@"yes"]) {
+          shouldMakeTea = YES;
+        } else {
+          shouldMakeTea = NO;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+          _callback(shouldMakeTea);
+        });            
+      }
+    } else {
+      if (!hasReportedFaultyConnection) {
+        NSLog(@"No data...");
+        hasReportedFaultyConnection = YES;
+        [[[UIAlertView alloc] initWithTitle:@"What a shame" 
+                                    message:@"It seems we cannot connect to the tea-server. Are you certain you are connected to the internet? Maybe try again later?" 
+                                   delegate:nil 
+                          cancelButtonTitle:nil 
+                          otherButtonTitles:@"Ok", nil] show];
+      }
+    }
+    sleep(1);
   }
 }
 

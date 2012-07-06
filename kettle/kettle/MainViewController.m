@@ -17,6 +17,10 @@
 @synthesize sadView = _sadView;
 @synthesize reminderButton = _reminderButton;
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Init and UIViewController
+
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -75,6 +79,8 @@
   }
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Flipside View Controller
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
@@ -108,9 +114,16 @@
     }
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Register for push notifications
+
 - (IBAction)pleaseAddAReminder:(id)sender {
+  [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark CoreLocation - MKReverseGeocoder
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
@@ -133,12 +146,11 @@
       NSString *country = [placemark country];
       if (![country isEqualToString:@"United Kingdom"]) {
         // Warn the user that the mesurements are not valid outside the UK.
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning" 
-                                   message:@"You are outside the United Kingdom. The power grid measurements we are using are not valid for your location" 
-                                  delegate:nil 
-                         cancelButtonTitle:nil 
-                         otherButtonTitles:@"Ok", nil];
-        [alertView show];
+        [[[UIAlertView alloc] initWithTitle:@"Warning" 
+                                    message:@"You are outside the United Kingdom. The power grid measurements we are using are not valid for your location" 
+                                   delegate:nil 
+                          cancelButtonTitle:nil 
+                          otherButtonTitles:@"Ok", nil] show];
       }
     }
   }];
