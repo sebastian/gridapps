@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIView *happyView;
 @property (weak, nonatomic) IBOutlet UIView *sadView;
 @property (weak, nonatomic) IBOutlet UIButton *reminderButton;
+@property (weak, nonatomic) IBOutlet UIImageView *happyImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *sadImageView;
 
 - (IBAction)showInfo:(id)sender;
 - (IBAction)pleaseAddAReminder:(id)sender;

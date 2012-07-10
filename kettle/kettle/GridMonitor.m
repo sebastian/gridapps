@@ -73,11 +73,22 @@
     }
     sleep(1);
   }
+  NSLog(@"Left monitoring loop");
 }
 
 - (void) startWithCallback:(MonitorCallback)callback
 {
   _callback = callback;
+  [self resumeMonitoring];
+}
+
+- (void) pauseMonitoring
+{
+  monitorRunning = NO;
+}
+
+- (void) resumeMonitoring
+{
   if (!monitorRunning) {
     monitorRunning = YES;
     [self performSelectorInBackground:@selector(startMonitor) withObject:nil];    

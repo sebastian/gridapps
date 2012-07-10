@@ -17,5 +17,7 @@ typedef void(^MonitorCallback)(BOOL);
 }
 
 - (void) startWithCallback:(MonitorCallback)callback;
+- (void) pauseMonitoring;
+- (void) resumeMonitoring;
 
 @end
