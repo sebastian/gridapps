@@ -13,6 +13,11 @@
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, CLLocationManagerDelegate> {
   CLLocationManager *locationManager;
+  
+  NSArray *happyPhotosPortrait;
+  NSArray *happyPhotosLandscape;
+  UIImage *sadPhotoPortrait;
+  UIImage *sadPhotoLandscape;
 }
 
 @property (nonatomic, retain) GridMonitor *monitor;
@@ -20,8 +25,11 @@
 @property (weak, nonatomic) IBOutlet UIView *happyView;
 @property (weak, nonatomic) IBOutlet UIView *sadView;
 @property (weak, nonatomic) IBOutlet UIButton *reminderButton;
-@property (weak, nonatomic) IBOutlet UIImageView *happyImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *sadImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *happyImageViewPortrait;
+@property (weak, nonatomic) IBOutlet UIImageView *happyImageViewLandscape;
+@property (weak, nonatomic) IBOutlet UIImageView *sadImageViewPortrait;
+@property (weak, nonatomic) IBOutlet UIImageView *sadImageViewLandscape;
+
 
 - (IBAction)showInfo:(id)sender;
 - (IBAction)pleaseAddAReminder:(id)sender;
