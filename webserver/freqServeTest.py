@@ -1,16 +1,11 @@
 import web
 import json
-import redis
 
-
-r = redis.StrictRedis(host='localhost', port=6379, db=0)
-
-freqSet = "frequency:received"
 
 urls = (
   '/', 'indexRequest',
-  '/json', 'jsonRequest'
-  #'/setfreq', 'setjson'
+  '/json', 'jsonRequest',
+  '/setfreq', 'setjson'
 )
 
 freq = 50;
@@ -22,18 +17,14 @@ class indexRequest:
 
 class jsonRequest:
   def GET(self):
-    out = r.zrevrange(freqSet, 0, 0)[0].replace("\'", "\"")
-    #out.replace("\'", "\"")
-    outJson = json.loads(out)
-    if outJson['freq'] < 50:
-      outJson['instruction'] = 'no'
+    out = {'freq':freq}
+    if freq >= 50:
+      out['instruction'] = 'yes'
     else:
-      outJson['instruction'] = 'yes'
-    
-    #print out
-    #print str(out) 
+      out['instruction'] = 'no'
+      
     web.header('Content-Type', 'application/json')
-    return json.dumps(outJson)
+    return json.dumps(out)
     
 class setjson:
   def GET(self):
