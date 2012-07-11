@@ -8,17 +8,18 @@
 
 #import "MainViewController.h"
 #import "GridMonitor.h"
+#import "NotificationViewController.h"
 
 @implementation MainViewController
 @synthesize sadImageViewPortrait = _sadImageViewPortrait;
 @synthesize sadImageViewLandscape;
 @synthesize happyImageViewLandscape = _happyImageViewLandscape;
 
+@synthesize notificationViewController;
 @synthesize monitor = _monitor;
 @synthesize flipsidePopoverController = _flipsidePopoverController;
 @synthesize happyView = _happyView;
 @synthesize sadView = _sadView;
-@synthesize reminderButton = _reminderButton;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -61,11 +62,13 @@
       sadAlpha = 0.;
       [self.happyImageViewLandscape startAnimating];
       [self.happyImageViewPortrait startAnimating];
+      [notificationViewController showHappyNotificationWithTitle:@"Fantastic" andMessage:@"You can safely make your tea now! Enjoy it, and please do NOT add milk!"];
     } else {
       backgroundColour = [UIColor redColor];
       happyAlpha = 0.;
       [self.happyImageViewLandscape stopAnimating];
       [self.happyImageViewPortrait stopAnimating];
+      [notificationViewController showSadNotificationWithTitle:@"Sorry" andMessage:@"The power grid is under load."];
     }
     
     [UIView animateWithDuration:1. animations:^{
@@ -74,7 +77,8 @@
       self.sadView.alpha = sadAlpha;
     }];
   }];
-  NSLog(@"view did load");
+  
+  [self.view addSubview:notificationViewController.view];
 }
 
 - (void)viewDidUnload
@@ -86,10 +90,10 @@
   
   [self setHappyView:nil];
   [self setSadView:nil];
-  [self setReminderButton:nil];
   [self setSadImageViewPortrait:nil];
   [self setHappyImageViewLandscape:nil];
   [self setSadImageViewLandscape:nil];
+  [self setNotificationViewController:nil];
   [super viewDidUnload];
   // Release any retained subviews of the main view.
 }
@@ -101,6 +105,7 @@
 
 - (void)loadImagesForOrientation:(UIInterfaceOrientation)orientation
 {
+  NSLog(@"LoadImagesForOrientation");
   if (orientation == UIInterfaceOrientationPortrait ||
       orientation == UIInterfaceOrientationPortraitUpsideDown) {
     self.happyImageViewPortrait.hidden = NO;
@@ -176,7 +181,7 @@
     }
 }
 
-- (IBAction)showInfo:(id)sender
+- (IBAction)showInfo:(UIButton *)infoButton
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideViewController" bundle:nil];
@@ -193,7 +198,7 @@
         if ([self.flipsidePopoverController isPopoverVisible]) {
             [self.flipsidePopoverController dismissPopoverAnimated:YES];
         } else {
-            [self.flipsidePopoverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+          [self.flipsidePopoverController presentPopoverFromRect:infoButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         }
     }
 }
@@ -202,7 +207,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Register for push notifications
 
-- (IBAction)pleaseAddAReminder:(id)sender {
+- (IBAction)pleaseAddAReminder:(id)sender
+{
   [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
 }
 

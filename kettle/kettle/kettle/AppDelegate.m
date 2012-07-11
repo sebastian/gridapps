@@ -81,16 +81,11 @@
 
 // Delegation methods
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
-  NSLog(@"My token is: %@, length: %i bytes", devToken, [devToken length]);
+  const void *devTokenBytes = [devToken bytes];
   
-  NSMutableData *data = [[NSMutableData alloc] init];
-  [data appendData:[@"token=" dataUsingEncoding:NSUTF8StringEncoding]];
-  [data appendData:devToken];
-  
-  NSURL *url = [NSURL URLWithString:@"http://home.elsmorian.com:8081/requestnotify"];
-  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-  [request setHTTPBody:data];
-  [request setHTTPMethod:@"POST"];
+  NSURL *url = [NSURL URLWithString:@"http://home.elsmorian.com:8080/notificationsubscribers"];
+  NSMutableURLRequest *request = [NSURLRequest requestWithURL:url];
+  [request setHTTPBody:[NSData dataWithBytes:devTokenBytes length:[devToken length]]];
   NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
   [connection start];
   

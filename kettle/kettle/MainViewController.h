@@ -10,8 +10,10 @@
 #import <CoreLocation/CoreLocation.h>
 
 @class GridMonitor;
+@class NotificationViewController;
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, CLLocationManagerDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, CLLocationManagerDelegate>
+{
   CLLocationManager *locationManager;
   
   NSArray *happyPhotosPortrait;
@@ -19,12 +21,12 @@
   UIImage *sadPhotoPortrait;
   UIImage *sadPhotoLandscape;
 }
+@property (strong, nonatomic) IBOutlet NotificationViewController *notificationViewController;
 
 @property (nonatomic, retain) GridMonitor *monitor;
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 @property (weak, nonatomic) IBOutlet UIView *happyView;
 @property (weak, nonatomic) IBOutlet UIView *sadView;
-@property (weak, nonatomic) IBOutlet UIButton *reminderButton;
 @property (weak, nonatomic) IBOutlet UIImageView *happyImageViewPortrait;
 @property (weak, nonatomic) IBOutlet UIImageView *happyImageViewLandscape;
 @property (weak, nonatomic) IBOutlet UIImageView *sadImageViewPortrait;

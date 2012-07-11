@@ -21,10 +21,6 @@
 		0CB9E0CA15A6F5D60076F8C7 /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CB9E0C815A6F5D60076F8C7 /* FlipsideViewController.xib */; };
 		0CB9E0D615A6F8500076F8C7 /* GridMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9E0D515A6F8500076F8C7 /* GridMonitor.m */; };
 		0CB9E0D915A702F60076F8C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9E0D815A702F60076F8C7 /* CoreLocation.framework */; };
-		962A5F8E15AC936E00BC3574 /* button-banner-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 962A5F8A15AC936E00BC3574 /* button-banner-active.png */; };
-		962A5F8F15AC936E00BC3574 /* button-banner-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 962A5F8B15AC936E00BC3574 /* button-banner-active@2x.png */; };
-		962A5F9015AC936E00BC3574 /* button-banner-passive.png in Resources */ = {isa = PBXBuildFile; fileRef = 962A5F8C15AC936E00BC3574 /* button-banner-passive.png */; };
-		962A5F9115AC936E00BC3574 /* button-banner-passive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 962A5F8D15AC936E00BC3574 /* button-banner-passive@2x.png */; };
 		968F284B15A9C2F400D0B5C1 /* iphone-landscape-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 968F283715A9C2F400D0B5C1 /* iphone-landscape-1.png */; };
 		968F284C15A9C2F400D0B5C1 /* iphone-landscape-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 968F283815A9C2F400D0B5C1 /* iphone-landscape-1@2x.png */; };
 		968F284D15A9C2F400D0B5C1 /* iphone-landscape-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 968F283915A9C2F400D0B5C1 /* iphone-landscape-2.png */; };
@@ -45,6 +41,7 @@
 		968F285C15A9C2F400D0B5C1 /* iphone-portrait-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 968F284815A9C2F400D0B5C1 /* iphone-portrait-4@2x.png */; };
 		968F285D15A9C2F400D0B5C1 /* iphone-portrait-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 968F284915A9C2F400D0B5C1 /* iphone-portrait-off.png */; };
 		968F285E15A9C2F400D0B5C1 /* iphone-portrait-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 968F284A15A9C2F400D0B5C1 /* iphone-portrait-off@2x.png */; };
+		96A38F8915ADB67000DDC073 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A38F8815ADB67000DDC073 /* NotificationViewController.m */; };
 		96EEFD9915A9C95A008FE3A3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EEFD9715A9C95A008FE3A3 /* icon.png */; };
 		96EEFD9A15A9C95A008FE3A3 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EEFD9815A9C95A008FE3A3 /* icon@2x.png */; };
 		96F1A5B615AC4384002486C1 /* ipad-landscape-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F1A5A215AC4384002486C1 /* ipad-landscape-1.png */; };
@@ -92,10 +89,7 @@
 		0CB9E0D515A6F8500076F8C7 /* GridMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridMonitor.m; sourceTree = "<group>"; };
 		0CB9E0D815A702F60076F8C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0CC9D51D15A72A3C007C712B /* audio-source.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "audio-source.txt"; sourceTree = "<group>"; };
-		962A5F8A15AC936E00BC3574 /* button-banner-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-banner-active.png"; sourceTree = "<group>"; };
-		962A5F8B15AC936E00BC3574 /* button-banner-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-banner-active@2x.png"; sourceTree = "<group>"; };
-		962A5F8C15AC936E00BC3574 /* button-banner-passive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-banner-passive.png"; sourceTree = "<group>"; };
-		962A5F8D15AC936E00BC3574 /* button-banner-passive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-banner-passive@2x.png"; sourceTree = "<group>"; };
+		9654476315ADD9E200B2C7B4 /* kettle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = kettle.entitlements; sourceTree = "<group>"; };
 		968F283715A9C2F400D0B5C1 /* iphone-landscape-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-landscape-1.png"; sourceTree = "<group>"; };
 		968F283815A9C2F400D0B5C1 /* iphone-landscape-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-landscape-1@2x.png"; sourceTree = "<group>"; };
 		968F283915A9C2F400D0B5C1 /* iphone-landscape-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-landscape-2.png"; sourceTree = "<group>"; };
@@ -116,6 +110,8 @@
 		968F284815A9C2F400D0B5C1 /* iphone-portrait-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-portrait-4@2x.png"; sourceTree = "<group>"; };
 		968F284915A9C2F400D0B5C1 /* iphone-portrait-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-portrait-off.png"; sourceTree = "<group>"; };
 		968F284A15A9C2F400D0B5C1 /* iphone-portrait-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-portrait-off@2x.png"; sourceTree = "<group>"; };
+		96A38F8715ADB67000DDC073 /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		96A38F8815ADB67000DDC073 /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		96EEFD9715A9C95A008FE3A3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		96EEFD9815A9C95A008FE3A3 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		96F1A5A215AC4384002486C1 /* ipad-landscape-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-landscape-1.png"; sourceTree = "<group>"; };
@@ -186,18 +182,20 @@
 		0CB9E0B015A6F5D60076F8C7 /* kettle */ = {
 			isa = PBXGroup;
 			children = (
+				9654476315ADD9E200B2C7B4 /* kettle.entitlements */,
 				0CB9E0B915A6F5D60076F8C7 /* AppDelegate.h */,
 				0CB9E0BA15A6F5D60076F8C7 /* AppDelegate.m */,
 				0CB9E0BC15A6F5D60076F8C7 /* MainViewController.h */,
 				0CB9E0BD15A6F5D60076F8C7 /* MainViewController.m */,
 				0CB9E0BF15A6F5D60076F8C7 /* FlipsideViewController.h */,
 				0CB9E0C015A6F5D60076F8C7 /* FlipsideViewController.m */,
+				0CB9E0D415A6F8500076F8C7 /* GridMonitor.h */,
+				0CB9E0D515A6F8500076F8C7 /* GridMonitor.m */,
+				96A38F8C15ADC5E200DDC073 /* Notification */,
 				0CB9E0C215A6F5D60076F8C7 /* MainViewController_iPhone.xib */,
 				0CB9E0C515A6F5D60076F8C7 /* MainViewController_iPad.xib */,
 				0CB9E0C815A6F5D60076F8C7 /* FlipsideViewController.xib */,
 				0CB9E0B115A6F5D60076F8C7 /* Supporting Files */,
-				0CB9E0D415A6F8500076F8C7 /* GridMonitor.h */,
-				0CB9E0D515A6F8500076F8C7 /* GridMonitor.m */,
 			);
 			path = kettle;
 			sourceTree = "<group>";
@@ -205,7 +203,6 @@
 		0CB9E0B115A6F5D60076F8C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				962A5F9215AC937400BC3574 /* Button */,
 				96EEFD9715A9C95A008FE3A3 /* icon.png */,
 				96EEFD9815A9C95A008FE3A3 /* icon@2x.png */,
 				96F1A5A115AC4384002486C1 /* ipad graphics */,
@@ -218,17 +215,6 @@
 				0CB9E0B815A6F5D60076F8C7 /* kettle-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		962A5F9215AC937400BC3574 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				962A5F8A15AC936E00BC3574 /* button-banner-active.png */,
-				962A5F8B15AC936E00BC3574 /* button-banner-active@2x.png */,
-				962A5F8C15AC936E00BC3574 /* button-banner-passive.png */,
-				962A5F8D15AC936E00BC3574 /* button-banner-passive@2x.png */,
-			);
-			name = Button;
 			sourceTree = "<group>";
 		};
 		968F283615A9C2F400D0B5C1 /* iphone graphics */ = {
@@ -257,6 +243,15 @@
 			);
 			name = "iphone graphics";
 			path = iphonegraphics;
+			sourceTree = "<group>";
+		};
+		96A38F8C15ADC5E200DDC073 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				96A38F8715ADB67000DDC073 /* NotificationViewController.h */,
+				96A38F8815ADB67000DDC073 /* NotificationViewController.m */,
+			);
+			name = Notification;
 			sourceTree = "<group>";
 		};
 		96F1A5A115AC4384002486C1 /* ipad graphics */ = {
@@ -385,10 +380,6 @@
 				96F1A5C715AC4384002486C1 /* ipad-portrait-4@2x.png in Resources */,
 				96F1A5C815AC4384002486C1 /* ipad-portrait-off.png in Resources */,
 				96F1A5C915AC4384002486C1 /* ipad-portrait-off@2x.png in Resources */,
-				962A5F8E15AC936E00BC3574 /* button-banner-active.png in Resources */,
-				962A5F8F15AC936E00BC3574 /* button-banner-active@2x.png in Resources */,
-				962A5F9015AC936E00BC3574 /* button-banner-passive.png in Resources */,
-				962A5F9115AC936E00BC3574 /* button-banner-passive@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +395,7 @@
 				0CB9E0BE15A6F5D60076F8C7 /* MainViewController.m in Sources */,
 				0CB9E0C115A6F5D60076F8C7 /* FlipsideViewController.m in Sources */,
 				0CB9E0D615A6F8500076F8C7 /* GridMonitor.m in Sources */,
+				96A38F8915ADB67000DDC073 /* NotificationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,14 +487,15 @@
 		0CB9E0CE15A6F5D60076F8C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = kettle/kettle.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sebastian Probst Eide (9NVYP52RY9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sebastian Probst Eide (9NVYP52RY9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kettle/kettle-Prefix.pch";
 				INFOPLIST_FILE = "kettle/kettle-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "8FF24B04-CDFC-4B1D-8748-CB24093A1F00";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8FF24B04-CDFC-4B1D-8748-CB24093A1F00";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -510,6 +503,7 @@
 		0CB9E0CF15A6F5D60076F8C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = kettle/kettle.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
