@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AVFoundation/AVFoundation.h"
 #import "MainViewController.h"
 #import "GridMonitor.h"
 
@@ -19,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  [application setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
 
   monitor = [[GridMonitor alloc] init];
   
@@ -60,6 +61,16 @@
   return YES;
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+  [self playSoundNamed:@"shortKettle.caf"];
+  [[[UIAlertView alloc] initWithTitle:@"Ha!"
+                              message:@"Got a remote notification, darn slick"
+                             delegate:nil
+                    cancelButtonTitle:NSLocalizedString(@"OK", @"") 
+                    otherButtonTitles:nil] show];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
   [monitor pauseMonitoring];
@@ -80,21 +91,32 @@
 #pragma mark - Notification registration
 
 // Delegation methods
-- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
-  NSLog(@"My token is: %@, length: %i bytes", devToken, [devToken length]);
-  
-  NSMutableData *data = [[NSMutableData alloc] init];
-  [data appendData:[@"token=" dataUsingEncoding:NSUTF8StringEncoding]];
-  [data appendData:devToken];
-  
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken
+{
   NSURL *url = [NSURL URLWithString:@"http://home.elsmorian.com:8081/requestnotify"];
   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-  [request setHTTPBody:data];
   [request setHTTPMethod:@"POST"];
+
+  NSString *bodyContent = [NSString stringWithFormat:@"token=%@", [self convertTokenToDeviceID:devToken]];
+  [request setHTTPBody:[bodyContent dataUsingEncoding:NSUTF8StringEncoding]];
+  
   NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
   [connection start];
   
   NSLog(@"Has sent of registration asynchronously.");
+}
+
+- (NSString *)convertTokenToDeviceID:(NSData *)token
+{
+  NSMutableString *deviceID = [NSMutableString string];
+  
+  // iterate through the bytes and convert to hex
+  unsigned char *ptr = (unsigned char *)[token bytes];
+  
+  for (NSInteger i=0; i < 32; ++i) {
+    [deviceID appendString:[NSString stringWithFormat:@"%02x", ptr[i]]];
+  }
+  return deviceID;
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
@@ -107,12 +129,12 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
   // Don't expect a response.
-  NSLog(@"ERROR: Received a response on URLRequest, but hadn't expected one");
+  NSLog(@"Received response: %@", response.description);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)d {
   // Don't expect data.
-  NSLog(@"ERROR: Received data, but hadn't expected any");
+  NSLog(@"Received data: %@", [d description]);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -127,9 +149,38 @@
   // Don't want to deal with this...
   // Ok...
   NSLog(@"ERROR connection finished loading... don't want to deal with it...");
-  //  NSString *responseText = [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding];  
+  //  NSString *responseText = [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding];
   //  // Do anything you want with it 
   //  [responseText release];
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Misc
+
+- (void) playSoundNamed:(NSString *)name {
+  NSLog(@"Trying to play a sound");
+  NSString * path;
+  AVAudioPlayer * snd;
+  NSError * err;
+  
+  path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:name];
+  
+  if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+    NSURL * url = [NSURL fileURLWithPath:path];
+    snd = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&err];
+    if (!snd) {
+      NSLog(@"Sound named '%@' had error %@", name, [err localizedDescription]);
+    } else {
+      [snd prepareToPlay];
+      dispatch_queue_t soundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+      dispatch_async(soundQueue, ^{
+        [snd play];
+        sleep(5);
+      });
+    }
+  } else {
+    NSLog(@"Sound file '%@' doesn't exist at '%@'", name, path);
+  }
+}
 @end

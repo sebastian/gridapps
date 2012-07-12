@@ -11,15 +11,14 @@
 #import "NotificationViewController.h"
 
 @implementation MainViewController
-@synthesize sadImageViewPortrait = _sadImageViewPortrait;
-@synthesize sadImageViewLandscape;
-@synthesize happyImageViewLandscape = _happyImageViewLandscape;
+@synthesize sadImageViewPortrait, sadImageViewLandscape;
+@synthesize happyImageViewLandscape, happyImageViewPortrait;
+@synthesize happyView;
+@synthesize sadView;
 
 @synthesize notificationViewController;
-@synthesize monitor = _monitor;
-@synthesize flipsidePopoverController = _flipsidePopoverController;
-@synthesize happyView = _happyView;
-@synthesize sadView = _sadView;
+@synthesize monitor;
+@synthesize flipsidePopoverController;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -207,8 +206,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Register for push notifications
 
-- (IBAction)pleaseAddAReminder:(id)sender
+- (IBAction)pleaseAddAReminder:(UIButton *)button
 {
+  [notificationViewController disableButton];
   [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
 }
 
@@ -224,12 +224,11 @@
   [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
     if (error) {
       // Notify the user that we coudln't reverse geolocate them...
-      UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning" 
-                                                          message:@"We don't know where you are. The power grid measurements we are using are only valid for the United Kingdom. If you are elsewhere, please disregard the advice given by this app" 
-                                                         delegate:nil 
-                                                cancelButtonTitle:nil 
-                                                otherButtonTitles:@"Ok", nil];
-      [alertView show];
+      [[[UIAlertView alloc] initWithTitle:@"Warning"
+                                 message:@"We don't know where you are. The power grid measurements we are using are only valid for the United Kingdom. If you are elsewhere, please disregard the advice given by this app"
+                                delegate:nil
+                       cancelButtonTitle:nil
+                       otherButtonTitles:@"Ok", nil] show];
       
     } else {
       CLPlacemark *placemark = [placemarks objectAtIndex:0];      

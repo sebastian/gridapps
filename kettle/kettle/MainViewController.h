@@ -22,7 +22,6 @@
   UIImage *sadPhotoLandscape;
 }
 @property (strong, nonatomic) IBOutlet NotificationViewController *notificationViewController;
-
 @property (nonatomic, retain) GridMonitor *monitor;
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 @property (weak, nonatomic) IBOutlet UIView *happyView;
@@ -32,8 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *sadImageViewPortrait;
 @property (weak, nonatomic) IBOutlet UIImageView *sadImageViewLandscape;
 
-
 - (IBAction)showInfo:(id)sender;
-- (IBAction)pleaseAddAReminder:(id)sender;
+- (IBAction)pleaseAddAReminder:(UIButton *)button;
 
 @end
