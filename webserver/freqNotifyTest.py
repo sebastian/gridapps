@@ -28,7 +28,7 @@ class notifyRequest:
     #try:
       token = web.input().token
       #data = web.data() # you can get data use this method
-      #print token
+      print token
       #print token['token']
       payload = json.dumps("{\"aps\": {\"alert\" : \"Hello notification world!!\"}}")
       s = socket.socket()
