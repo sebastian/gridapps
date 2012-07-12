@@ -12,12 +12,15 @@
   CGRect notificationFrame;
   CGRect initialFrame;
   BOOL pendingTapInNotification;
+  BOOL overdragging;
+  UIImage *windowShadeHappy, *windowShadeSad;
 }
 @property (weak, nonatomic) IBOutlet UILabel *notificationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *notificationHeaderLabel;
 @property (weak, nonatomic) IBOutlet UIButton *notificationButton;
+@property (weak, nonatomic) IBOutlet UIImageView *windowShadeImage;
 
 - (void) showHappyNotificationWithTitle:(NSString *)title andMessage:(NSString *)message;
 - (void) showSadNotificationWithTitle:(NSString *)title andMessage:(NSString *)message;
-
+- (void) disableButton;
 @end
