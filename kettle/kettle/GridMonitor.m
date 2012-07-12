@@ -68,7 +68,6 @@
       }
     } else {
       if (!hasReportedFaultyConnection) {
-        NSLog(@"No data...");
         hasReportedFaultyConnection = YES;
         [[[UIAlertView alloc] initWithTitle:@"What a shame" 
                                     message:@"It seems we cannot connect to the tea-server. Are you certain you are connected to the internet? Maybe try again later?" 
@@ -79,7 +78,6 @@
     }
     sleep(1);
   }
-  NSLog(@"Left monitoring loop");
 }
 
 - (void) startWithCallback:(MonitorCallback)callback

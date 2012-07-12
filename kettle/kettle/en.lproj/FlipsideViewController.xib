@@ -13,6 +13,7 @@
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBUINavigationItem</string>
 			<string>IBUIBarButtonItem</string>
+			<string>IBUITextView</string>
 			<string>IBUIView</string>
 			<string>IBUINavigationBar</string>
 			<string>IBProxyObject</string>
@@ -37,13 +38,65 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
+					<object class="IBUITextView" id="803651954">
+						<reference key="NSNextResponder" ref="249263867"/>
+						<int key="NSvFlags">274</int>
+						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
+						<reference key="NSSuperview" ref="249263867"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MSAxIDEAA</bytes>
+						</object>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<bool key="IBUIShowsVerticalScrollIndicator">NO</bool>
+						<object class="NSMutableString" key="IBUIText">
+							<bytes key="NS.bytes">Qm9pbGluZyBhIGtldHRsZT8gQ291bGQgeW91IHdhaXQgNSBtaW51dGVzPwoKIlRlYT8iIHNob3dzIHRo
+ZSB1c2VyIHRoZSBjdXJyZW50IHN0YXR1cyBvZiB0aGUgVUsgZWxlY3RyaWNpdHkgZ3JpZCwgdmlzdWFs
+aXNpbmcgd2hlbiB0aGUgZ3JpZCBpcyB1bmRlciBkZW1hbmQsIGFuZCB3aGVuIGl0IGlzIHByb2R1Y2lu
+ZyBleGNlc3MgZW5lcmd5LiAiVGVhPyIgY2FuIGFsc28gc2VuZCBhIG5vdGlmaWNhdGlvbiB3aGVuIHRo
+ZSBncmlkIGhhcyBiZWVuIHVuZGVyIGRlbWFuZCBidXQgaXMgbm93IGV4Y2VlZGluZyBpdC4gVXNpbmcg
+YXBwbGlhbmNlcyBzdWNoIGFzIGtldHRsZXMgd2hlbiB0aGVyZSBpcyBsZXNzIGRlbWFuZCBjYW4gaGVs
+cCBsb3dlciB0aGUgY2FyYm9uIGVtaXNzaW9ucyBvZiB0aGUgZ3JpZC4KCiJUZWE/IiBhbGxvd3MgeW91
+IHRvOwoqIFZpc3VhbGlzZSB0aGUgc3RhdHVzIG9mIHRoZSBncmlkIGluIHJlYWx0aW1lCiogUmVjZWl2
+ZSBhIHB1c2ggbm90aWZpY2F0aW9uIHdoZW4gdGhlIGdyaWQgaXMgdW5kZXIgbGVzcyBkZW1hbmQuCgpU
+aGUgZWxlY3RyaWNhbCBncmlkIGlzIGNvbnN0YW50bHkgdHJ5aW5nIHRvIG1hdGNoIHBvd2VyIHN1cHBs
+eSB0byBkZW1hbmQsIGFuZCBhdCB2YXJpb3VzIHRpbWVzIHRocm91Z2hvdXQgdGhlIGRheSB0aGUgZ3Jp
+ZCBpcyBlaXRoZXIgb3Zlci1wcm9kdWNpbmcgcmVzdWx0aW5nIGluIGV4Y2VzcyBwb3dlciwgb3IgdW5k
+ZXItcHJvZHVjaW5nIGFuZCBzdHJ1Z2dsaW5nIHRvIGtlZXAgdXAgd2l0aCBkZW1hbmQuIEluIG9yZGVy
+IHRvIGtlZXAgdXAgd2l0aCBzdWRkZW4gZGVtYW5kIGZvciBwb3dlciwgdGhlIGdyaWQgb2Z0ZW4gdXNl
+cyBtb3JlIGluZWZmaWNpZW50IG1lYW5zIG9mIGdlbmVyYXRpb24sIHdoaWNoIHByb2R1Y2VzCm1vcmUg
+Y2FyYm9uIGRpb3hpZGUgZXF1aXZhbGVudCBlbWlzc2lvbnMuCgoiVGVhPyIgdmlzdWFsaXNlcyB0aGUg
+Z3JpZCBzbyB1c2VycyBjYW4gZGVjaWRlIHdlYXRoZXIgdGhleSB3YW50IGEgY29mZmVlIG9yIHRlYSBu
+b3csIG9yIGlmIHRoZXkgd2lzaCB0byB3YWl0IHVudGlsIHRoZSBncmlkIGlzIHVuZGVyIGxlc3MgZGVt
+YW5kLgoKVG8gZmluZCBvdXQgbW9yZSBzZWUgIlRlYT8iIG9uIHRoZSBBcHAgU3RvcmUsIG9yIHZpc2l0
+ICJUZWE/Ii5jb20KA</bytes>
+						</object>
+						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+							<int key="IBUIAutocapitalizationType">2</int>
+							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						</object>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<int key="type">1</int>
+							<double key="pointSize">14</double>
+						</object>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">14</double>
+							<int key="NSfFlags">16</int>
+						</object>
+					</object>
 					<object class="IBUINavigationBar" id="871675769">
 						<reference key="NSNextResponder" ref="249263867"/>
 						<int key="NSvFlags">290</int>
 						<string key="NSFrameSize">{320, 44}</string>
 						<reference key="NSSuperview" ref="249263867"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="803651954"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -124,6 +177,7 @@
 						<reference key="object" ref="249263867"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="871675769"/>
+							<reference ref="803651954"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -148,6 +202,11 @@
 						<reference key="object" ref="854562692"/>
 						<reference key="parent" ref="553200710"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">47</int>
+						<reference key="object" ref="803651954"/>
+						<reference key="parent" ref="249263867"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -159,12 +218,13 @@
 				<string key="42.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="43.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="44.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="47.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">46</int>
+			<int key="maxID">47</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

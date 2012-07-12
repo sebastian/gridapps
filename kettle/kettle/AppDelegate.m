@@ -64,11 +64,6 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
   [self playSoundNamed:@"shortKettle.caf"];
-  [[[UIAlertView alloc] initWithTitle:@"Ha!"
-                              message:@"Got a remote notification, darn slick"
-                             delegate:nil
-                    cancelButtonTitle:NSLocalizedString(@"OK", @"") 
-                    otherButtonTitles:nil] show];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -102,8 +97,6 @@
   
   NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
   [connection start];
-  
-  NSLog(@"Has sent of registration asynchronously.");
 }
 
 - (NSString *)convertTokenToDeviceID:(NSData *)token
@@ -129,12 +122,10 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
   // Don't expect a response.
-  NSLog(@"Received response: %@", response.description);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)d {
   // Don't expect data.
-  NSLog(@"Received data: %@", [d description]);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -148,7 +139,6 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
   // Don't want to deal with this...
   // Ok...
-  NSLog(@"ERROR connection finished loading... don't want to deal with it...");
   //  NSString *responseText = [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding];
   //  // Do anything you want with it 
   //  [responseText release];
@@ -159,7 +149,6 @@
 #pragma mark - Misc
 
 - (void) playSoundNamed:(NSString *)name {
-  NSLog(@"Trying to play a sound");
   NSString * path;
   AVAudioPlayer * snd;
   NSError * err;

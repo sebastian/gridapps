@@ -53,27 +53,21 @@
   self.sadView.backgroundColor = [UIColor clearColor];
   
   [self.monitor startWithCallback:^(BOOL gridIsOK) {
-    UIColor *backgroundColour;
-    CGFloat happyAlpha = 1.;
-    CGFloat sadAlpha = 1.;
+    CGFloat happyAlpha;
     if (gridIsOK) {
-      backgroundColour = [UIColor greenColor];
-      sadAlpha = 0.;
+      happyAlpha = 1.0;
       [self.happyImageViewLandscape startAnimating];
       [self.happyImageViewPortrait startAnimating];
-      [notificationViewController showHappyNotificationWithTitle:@"Fantastic" andMessage:@"You can safely make your tea now! Enjoy it, and please do NOT add milk!"];
+      [notificationViewController showHappyNotificationWithTitle:@"Great!" andMessage:@"Pop the kettle on, the grid is meeting demand!"];
+
     } else {
-      backgroundColour = [UIColor redColor];
-      happyAlpha = 0.;
+      happyAlpha = 0.0;
       [self.happyImageViewLandscape stopAnimating];
       [self.happyImageViewPortrait stopAnimating];
-      [notificationViewController showSadNotificationWithTitle:@"Sorry" andMessage:@"The power grid is under load."];
+      [notificationViewController showSadNotificationWithTitle:@"Hold up!" andMessage:@" The grid is under demand, maybe wait a bit before boiling the kettle..."];        
     }
-    
     [UIView animateWithDuration:1. animations:^{
-      self.view.backgroundColor = backgroundColour;
       self.happyView.alpha = happyAlpha;
-      self.sadView.alpha = sadAlpha;
     }];
   }];
   
@@ -104,7 +98,6 @@
 
 - (void)loadImagesForOrientation:(UIInterfaceOrientation)orientation
 {
-  NSLog(@"LoadImagesForOrientation");
   if (orientation == UIInterfaceOrientationPortrait ||
       orientation == UIInterfaceOrientationPortraitUpsideDown) {
     self.happyImageViewPortrait.hidden = NO;
@@ -217,7 +210,6 @@
 #pragma mark CoreLocation - MKReverseGeocoder
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-  NSLog(@"Got a location update");
   [manager stopUpdatingLocation];
   
   CLGeocoder *geocoder = [[CLGeocoder alloc] init];

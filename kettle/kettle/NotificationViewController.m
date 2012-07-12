@@ -105,11 +105,10 @@
   double delayInSeconds = 5.0;
   dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
   dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-    if (pendingTapInNotification) {
-      pendingTapInNotification = NO;
-    } else {
+    if (! pendingTapInNotification) {
       [self slideUp];
     }
+    pendingTapInNotification = NO;
   });
 }
 
@@ -203,7 +202,6 @@
     // tugged in the blend at the end
     if (originy == 0.0 && overdragging) {
       // The user did an overdrag, slide all the way up
-      NSLog(@"It was overdragged and should go up");
       [self slideUp];
 
     // Did the user just overdrag a little, and we want
