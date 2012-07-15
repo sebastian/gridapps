@@ -19,7 +19,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  [application setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+
+  // Only iPhone like devices support the translucent style.
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+    [application setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+  }
 
   monitor = [[GridMonitor alloc] init];
   

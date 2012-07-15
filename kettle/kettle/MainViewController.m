@@ -11,6 +11,8 @@
 #import "NotificationViewController.h"
 
 @implementation MainViewController
+@synthesize happyAnimViewPortrait;
+@synthesize happyAnimViewLandscape;
 @synthesize sadImageViewPortrait, sadImageViewLandscape;
 @synthesize happyImageViewLandscape, happyImageViewPortrait;
 @synthesize happyView;
@@ -44,10 +46,10 @@
   [self loadPhotos];
   [self loadImagesForOrientation:UIInterfaceOrientationPortrait];
 
-  self.happyImageViewLandscape.animationDuration = 5.;
-  self.happyImageViewLandscape.animationRepeatCount = 0;
-  self.happyImageViewPortrait.animationDuration = 5.;
-  self.happyImageViewPortrait.animationRepeatCount = 0;
+  self.happyAnimViewLandscape.animationDuration = 5.;
+  self.happyAnimViewLandscape.animationRepeatCount = 0;
+  self.happyAnimViewPortrait.animationDuration = 5.;
+  self.happyAnimViewPortrait.animationRepeatCount = 0;
   
   self.happyView.backgroundColor = [UIColor clearColor];
   self.sadView.backgroundColor = [UIColor clearColor];
@@ -56,14 +58,14 @@
     CGFloat happyAlpha;
     if (gridIsOK) {
       happyAlpha = 1.0;
-      [self.happyImageViewLandscape startAnimating];
-      [self.happyImageViewPortrait startAnimating];
+      [self.happyAnimViewLandscape startAnimating];
+      [self.happyAnimViewPortrait startAnimating];
       [notificationViewController showHappyNotificationWithTitle:@"Great!" andMessage:@"Pop the kettle on, the grid is meeting demand!"];
 
     } else {
       happyAlpha = 0.0;
-      [self.happyImageViewLandscape stopAnimating];
-      [self.happyImageViewPortrait stopAnimating];
+      [self.happyAnimViewLandscape stopAnimating];
+      [self.happyAnimViewPortrait stopAnimating];
       [notificationViewController showSadNotificationWithTitle:@"Hold up!" andMessage:@" The grid is under demand, maybe wait a bit before boiling the kettle..."];        
     }
     [UIView animateWithDuration:1. animations:^{
@@ -76,17 +78,15 @@
 
 - (void)viewDidUnload
 {
-  happyPhotosLandscape = nil;
-  happyPhotosPortrait = nil;
-  sadPhotoLandscape = nil;
-  sadPhotoPortrait = nil;
-  
   [self setHappyView:nil];
   [self setSadView:nil];
   [self setSadImageViewPortrait:nil];
   [self setHappyImageViewLandscape:nil];
   [self setSadImageViewLandscape:nil];
   [self setNotificationViewController:nil];
+  [self setHappyAnimViewPortrait:nil];
+  [self setHappyAnimViewLandscape:nil];
+
   [super viewDidUnload];
   // Release any retained subviews of the main view.
 }
@@ -100,14 +100,18 @@
 {
   if (orientation == UIInterfaceOrientationPortrait ||
       orientation == UIInterfaceOrientationPortraitUpsideDown) {
+    self.happyAnimViewPortrait.hidden = NO;    
     self.happyImageViewPortrait.hidden = NO;
     self.sadImageViewPortrait.hidden = NO;
+    self.happyAnimViewLandscape.hidden = YES;
     self.happyImageViewLandscape.hidden = YES;
     self.sadImageViewLandscape.hidden = YES;
   } else if (orientation == UIInterfaceOrientationLandscapeRight ||
              orientation == UIInterfaceOrientationLandscapeLeft) {
+    self.happyAnimViewPortrait.hidden = YES; 
     self.happyImageViewPortrait.hidden = YES;
     self.sadImageViewPortrait.hidden = YES;
+    self.happyAnimViewLandscape.hidden = NO;
     self.happyImageViewLandscape.hidden = NO;
     self.sadImageViewLandscape.hidden = NO;
   }
@@ -124,31 +128,28 @@
   }
   
   UIImage * (^imageForState)(NSString *, NSString *) = ^(NSString *state, NSString *orientation) {
-    NSString *photoName = [NSString stringWithFormat:@"%@-%@-%@.png", strDevice, orientation, state];
+    NSString *photoName = [NSString stringWithFormat:@"%@-%@-electric-%@.png", strDevice, orientation, state];
     return [UIImage imageNamed:photoName];
   };
-
+  
   NSString *strOrientation;
   strOrientation = @"portrait";
-  happyPhotosPortrait = [NSArray arrayWithObjects:
-                 imageForState(@"1", strOrientation),
-                 imageForState(@"2", strOrientation),
-                 imageForState(@"3", strOrientation),
-                 imageForState(@"4", strOrientation), nil];
-  sadPhotoPortrait = imageForState(@"off", strOrientation);
+  self.happyAnimViewPortrait.animationImages = [NSArray arrayWithObjects:
+                 imageForState(@"anim1", strOrientation),
+                 imageForState(@"anim2", strOrientation),
+                 imageForState(@"anim3", strOrientation),
+                 imageForState(@"anim4", strOrientation), nil];
+  self.happyImageViewPortrait.image = imageForState(@"on", strOrientation);
+  self.sadImageViewPortrait.image = imageForState(@"off", strOrientation);
 
   strOrientation = @"landscape";
-  happyPhotosLandscape = [NSArray arrayWithObjects:
-                          imageForState(@"1", strOrientation),
-                          imageForState(@"2", strOrientation),
-                          imageForState(@"3", strOrientation),
-                          imageForState(@"4", strOrientation), nil];
-  sadPhotoLandscape = imageForState(@"off", strOrientation);
-  
-  self.happyImageViewPortrait.animationImages = happyPhotosPortrait;
-  self.sadImageViewPortrait.image = sadPhotoPortrait;
-  self.happyImageViewLandscape.animationImages = happyPhotosLandscape;
-  self.sadImageViewLandscape.image = sadPhotoLandscape;
+  self.happyAnimViewLandscape.animationImages = [NSArray arrayWithObjects:
+                          imageForState(@"anim1", strOrientation),
+                          imageForState(@"anim2", strOrientation),
+                          imageForState(@"anim3", strOrientation),
+                          imageForState(@"anim4", strOrientation), nil];
+  self.happyImageViewLandscape.image = imageForState(@"on", strOrientation);
+  self.sadImageViewLandscape.image = imageForState(@"off", strOrientation);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

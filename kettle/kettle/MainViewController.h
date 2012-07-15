@@ -15,19 +15,21 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, CLLocationManagerDelegate>
 {
   CLLocationManager *locationManager;
-  
-  NSArray *happyPhotosPortrait;
-  NSArray *happyPhotosLandscape;
-  UIImage *sadPhotoPortrait;
-  UIImage *sadPhotoLandscape;
 }
+
 @property (strong, nonatomic) IBOutlet NotificationViewController *notificationViewController;
 @property (nonatomic, retain) GridMonitor *monitor;
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
+
+// Happy
 @property (weak, nonatomic) IBOutlet UIView *happyView;
-@property (weak, nonatomic) IBOutlet UIView *sadView;
 @property (weak, nonatomic) IBOutlet UIImageView *happyImageViewPortrait;
 @property (weak, nonatomic) IBOutlet UIImageView *happyImageViewLandscape;
+@property (weak, nonatomic) IBOutlet UIImageView *happyAnimViewPortrait;
+@property (weak, nonatomic) IBOutlet UIImageView *happyAnimViewLandscape;
+
+// Sad
+@property (weak, nonatomic) IBOutlet UIView *sadView;
 @property (weak, nonatomic) IBOutlet UIImageView *sadImageViewPortrait;
 @property (weak, nonatomic) IBOutlet UIImageView *sadImageViewLandscape;
 
