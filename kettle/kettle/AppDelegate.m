@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
+  
   // Only iPhone like devices support the translucent style.
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
     [application setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
@@ -34,40 +34,24 @@
   }
   self.mainViewController.monitor = monitor;
   self.window.rootViewController = self.mainViewController;
-  
-  // Did we wake up with a notification?
-  UILocalNotification *remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-  if (remoteNotification) {
-    application.applicationIconBadgeNumber = 0;
-    NSLog(@"Got launched because of a notification");
-    // Can we do something clever here?
     
-    // Did we get this notification while the app was closed?
-    switch (application.applicationState) {
-      case UIApplicationStateActive:
-        NSLog(@"Got a message while already active, should we play a sound?");
-        break;
-        
-      case UIApplicationStateBackground:
-        NSLog(@"Application was in background, should we play sound?");
-        break;
-        
-      case UIApplicationStateInactive:
-        NSLog(@"The application was inactive. Presumably the sound has already been played?");
-        break;
-        
-      default:
-        break;
-    }
-  }
-  
   [self.window makeKeyAndVisible];
+  
   return YES;
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-  [self playSoundNamed:@"shortKettle.caf"];
+  switch (application.applicationState) {
+    case UIApplicationStateActive:
+      // We only want the sound to play, if the application was active at the time
+      // of receiving the notification.
+      [self playSoundNamed:@"shortKettle.caf"];    
+      break;
+
+    default:
+      break;
+  }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
