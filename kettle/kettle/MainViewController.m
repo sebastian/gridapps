@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "GridMonitor.h"
 #import "NotificationViewController.h"
+#import "Utilities.h"
 
 @implementation MainViewController
 @synthesize happyAnimViewPortrait;
@@ -216,23 +217,17 @@
   CLGeocoder *geocoder = [[CLGeocoder alloc] init];
   [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
     if (error) {
-      // Notify the user that we coudln't reverse geolocate them...
-      [[[UIAlertView alloc] initWithTitle:@"Warning"
-                                 message:@"We don't know where you are. The power grid measurements we are using are only valid for the United Kingdom. If you are elsewhere, please disregard the advice given by this app"
-                                delegate:nil
-                       cancelButtonTitle:nil
-                       otherButtonTitles:@"Ok", nil] show];
-      
+
+      [Utilities showAlert:@"Warning" message:@"We don't know where you are. The power grid measurements we are using are only valid for the United Kingdom. If you are elsewhere, please disregard the advice given by this app" msgIdentity:@"LackOfGeoWarning"];
+            
     } else {
       CLPlacemark *placemark = [placemarks objectAtIndex:0];      
       NSString *country = [placemark country];
       if (![country isEqualToString:@"United Kingdom"]) {
+
         // Warn the user that the mesurements are not valid outside the UK.
-        [[[UIAlertView alloc] initWithTitle:@"Warning" 
-                                    message:@"You are outside the United Kingdom. The power grid measurements we are using are not valid for your location" 
-                                   delegate:nil 
-                          cancelButtonTitle:nil 
-                          otherButtonTitles:@"Ok", nil] show];
+        [Utilities showAlert:@"Warning" message:@"You are outside the United Kingdom. The power grid measurements we are using are not valid for your location" msgIdentity:@"OutsideUKWarning"];
+
       }
     }
   }];

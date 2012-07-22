@@ -10,6 +10,7 @@
 #import "AVFoundation/AVFoundation.h"
 #import "MainViewController.h"
 #import "GridMonitor.h"
+#import "Utilities.h"
 
 @implementation AppDelegate
 
@@ -117,11 +118,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-  [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
-                              message:[error localizedDescription]
-                             delegate:nil
-                    cancelButtonTitle:NSLocalizedString(@"OK", @"") 
-                    otherButtonTitles:nil] show];
+  [Utilities showAlert:@"Error" message:[error localizedDescription] msgIdentity:nil];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {

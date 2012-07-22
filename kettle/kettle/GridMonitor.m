@@ -7,6 +7,7 @@
 //
 
 #import "GridMonitor.h"
+#import "Utilities.h"
 
 @implementation GridMonitor
 
@@ -31,7 +32,6 @@
 
 - (void) startMonitor
 {
-  BOOL hasReportedFaultyConnection = NO;
   BOOL previousState = YES;
   BOOL firstRun = YES;
   while (monitorRunning) {
@@ -42,15 +42,8 @@
     if (jsonData != nil) {
       NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&jsonError];
       if (jsonError) {
-        NSLog(@"ERROR: Failed at reading the JSON data");
-        if (!hasReportedFaultyConnection) {
-          hasReportedFaultyConnection = YES;
-          [[[UIAlertView alloc] initWithTitle:@"Oh my" 
-                                      message:@"Something seems to be terribly wrong at the moment. Maybe try again later?" 
-                                     delegate:nil 
-                            cancelButtonTitle:nil 
-                            otherButtonTitles:@"Ok", nil] show];
-        }
+        [Utilities showAlert:@"Oh my" message:@"Something seems to be terribly wrong at the moment. Maybe try again later?"  msgIdentity:@"CannotParseJson"];
+
       } else {
         BOOL shouldMakeTea;
         if ([[json objectForKey:@"instruction"] isEqualToString:@"yes"]) {
@@ -67,14 +60,8 @@
         previousState = shouldMakeTea;
       }
     } else {
-      if (!hasReportedFaultyConnection) {
-        hasReportedFaultyConnection = YES;
-        [[[UIAlertView alloc] initWithTitle:@"What a shame" 
-                                    message:@"It seems we cannot connect to the tea-server. Are you certain you are connected to the internet? Maybe try again later?" 
-                                   delegate:nil 
-                          cancelButtonTitle:nil 
-                          otherButtonTitles:@"Ok", nil] show];
-      }
+      [Utilities showAlert:@"What a shame" message:@"It seems we cannot connect to the tea-server. Are you certain you are connected to the internet? Maybe try again later?" msgIdentity:@"NoInternet"];
+
     }
     sleep(1);
   }

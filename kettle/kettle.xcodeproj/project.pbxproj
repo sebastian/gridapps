@@ -24,6 +24,7 @@
 		96062AE215AE38CC00478291 /* logo-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 96062AE115AE38CC00478291 /* logo-114.png */; };
 		96062AE415AE38D600478291 /* logo-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 96062AE315AE38D600478291 /* logo-72.png */; };
 		96062AE615AE38DA00478291 /* logo-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 96062AE515AE38DA00478291 /* logo-144.png */; };
+		962A653315BBD00300887003 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 962A653215BBD00300887003 /* Utilities.m */; };
 		9646DFE615AF13F80086D286 /* shortKettle.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9646DFE515AF13F80086D286 /* shortKettle.caf */; };
 		9646DFE815AF15190086D286 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9646DFE715AF15190086D286 /* AVFoundation.framework */; };
 		96A38F8915ADB67000DDC073 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A38F8815ADB67000DDC073 /* NotificationViewController.m */; };
@@ -115,6 +116,8 @@
 		96062AE115AE38CC00478291 /* logo-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-114.png"; sourceTree = "<group>"; };
 		96062AE315AE38D600478291 /* logo-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-72.png"; sourceTree = "<group>"; };
 		96062AE515AE38DA00478291 /* logo-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-144.png"; sourceTree = "<group>"; };
+		962A653115BBD00300887003 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		962A653215BBD00300887003 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		9646DFE515AF13F80086D286 /* shortKettle.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shortKettle.caf; sourceTree = "<group>"; };
 		9646DFE715AF15190086D286 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9654476315ADD9E200B2C7B4 /* kettle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = kettle.entitlements; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 				0CB9E0C515A6F5D60076F8C7 /* MainViewController_iPad.xib */,
 				0CB9E0C815A6F5D60076F8C7 /* FlipsideViewController.xib */,
 				0CB9E0B115A6F5D60076F8C7 /* Supporting Files */,
+				962A653115BBD00300887003 /* Utilities.h */,
+				962A653215BBD00300887003 /* Utilities.m */,
 			);
 			path = kettle;
 			sourceTree = "<group>";
@@ -255,10 +260,7 @@
 				9646DFE515AF13F80086D286 /* shortKettle.caf */,
 				9654476315ADD9E200B2C7B4 /* kettle.entitlements */,
 				96489FBD15AEE18700011E12 /* Logo */,
-				96DA58DB15AE2640004B4C57 /* window-shade-green.png */,
-				96DA58DC15AE2640004B4C57 /* window-shade-green@2x.png */,
-				96DA58DD15AE2640004B4C57 /* window-shade-red.png */,
-				96DA58DE15AE2640004B4C57 /* window-shade-red@2x.png */,
+				962A652A15BBCB8100887003 /* Shade illustrations */,
 				96EEFD9715A9C95A008FE3A3 /* icon.png */,
 				96EEFD9815A9C95A008FE3A3 /* icon@2x.png */,
 				0CC9D51D15A72A3C007C712B /* audio-source.txt */,
@@ -268,6 +270,17 @@
 				0CB9E0B815A6F5D60076F8C7 /* kettle-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		962A652A15BBCB8100887003 /* Shade illustrations */ = {
+			isa = PBXGroup;
+			children = (
+				96DA58DB15AE2640004B4C57 /* window-shade-green.png */,
+				96DA58DC15AE2640004B4C57 /* window-shade-green@2x.png */,
+				96DA58DD15AE2640004B4C57 /* window-shade-red.png */,
+				96DA58DE15AE2640004B4C57 /* window-shade-red@2x.png */,
+			);
+			name = "Shade illustrations";
 			sourceTree = "<group>";
 		};
 		96489FBD15AEE18700011E12 /* Logo */ = {
@@ -496,6 +509,7 @@
 				0CB9E0C115A6F5D60076F8C7 /* FlipsideViewController.m in Sources */,
 				0CB9E0D615A6F8500076F8C7 /* GridMonitor.m in Sources */,
 				96A38F8915ADB67000DDC073 /* NotificationViewController.m in Sources */,
+				962A653315BBD00300887003 /* Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
