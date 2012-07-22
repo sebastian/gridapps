@@ -25,9 +25,13 @@
 		96062AE415AE38D600478291 /* logo-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 96062AE315AE38D600478291 /* logo-72.png */; };
 		96062AE615AE38DA00478291 /* logo-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 96062AE515AE38DA00478291 /* logo-144.png */; };
 		962A653315BBD00300887003 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 962A653215BBD00300887003 /* Utilities.m */; };
+		962A653715BBDE9400887003 /* ChrisMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 962A653615BBDE9400887003 /* ChrisMonitor.m */; };
+		962A653A15BBDFB400887003 /* TeaError.m in Sources */ = {isa = PBXBuildFile; fileRef = 962A653915BBDFB400887003 /* TeaError.m */; };
 		9646DFE615AF13F80086D286 /* shortKettle.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9646DFE515AF13F80086D286 /* shortKettle.caf */; };
 		9646DFE815AF15190086D286 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9646DFE715AF15190086D286 /* AVFoundation.framework */; };
 		96A38F8915ADB67000DDC073 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A38F8815ADB67000DDC073 /* NotificationViewController.m */; };
+		96C2AEC515BBE9AE000F7A66 /* Monitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2AEC415BBE9AE000F7A66 /* Monitor.m */; };
+		96C2AEC915BBEE9D000F7A66 /* CanITurnItOn.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2AEC815BBEE9D000F7A66 /* CanITurnItOn.m */; };
 		96DA58DF15AE2640004B4C57 /* window-shade-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DA58DB15AE2640004B4C57 /* window-shade-green.png */; };
 		96DA58E015AE2640004B4C57 /* window-shade-green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DA58DC15AE2640004B4C57 /* window-shade-green@2x.png */; };
 		96DA58E115AE2640004B4C57 /* window-shade-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DA58DD15AE2640004B4C57 /* window-shade-red.png */; };
@@ -118,11 +122,19 @@
 		96062AE515AE38DA00478291 /* logo-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-144.png"; sourceTree = "<group>"; };
 		962A653115BBD00300887003 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		962A653215BBD00300887003 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		962A653515BBDE9400887003 /* ChrisMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChrisMonitor.h; sourceTree = "<group>"; };
+		962A653615BBDE9400887003 /* ChrisMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChrisMonitor.m; sourceTree = "<group>"; };
+		962A653815BBDFB400887003 /* TeaError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeaError.h; sourceTree = "<group>"; };
+		962A653915BBDFB400887003 /* TeaError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeaError.m; sourceTree = "<group>"; };
 		9646DFE515AF13F80086D286 /* shortKettle.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shortKettle.caf; sourceTree = "<group>"; };
 		9646DFE715AF15190086D286 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9654476315ADD9E200B2C7B4 /* kettle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = kettle.entitlements; sourceTree = "<group>"; };
 		96A38F8715ADB67000DDC073 /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		96A38F8815ADB67000DDC073 /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		96C2AEC315BBE9AE000F7A66 /* Monitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monitor.h; sourceTree = "<group>"; };
+		96C2AEC415BBE9AE000F7A66 /* Monitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monitor.m; sourceTree = "<group>"; };
+		96C2AEC715BBEE9D000F7A66 /* CanITurnItOn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanITurnItOn.h; sourceTree = "<group>"; };
+		96C2AEC815BBEE9D000F7A66 /* CanITurnItOn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanITurnItOn.m; sourceTree = "<group>"; };
 		96DA58DB15AE2640004B4C57 /* window-shade-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window-shade-green.png"; sourceTree = "<group>"; };
 		96DA58DC15AE2640004B4C57 /* window-shade-green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window-shade-green@2x.png"; sourceTree = "<group>"; };
 		96DA58DD15AE2640004B4C57 /* window-shade-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window-shade-red.png"; sourceTree = "<group>"; };
@@ -239,8 +251,7 @@
 				0CB9E0BD15A6F5D60076F8C7 /* MainViewController.m */,
 				0CB9E0BF15A6F5D60076F8C7 /* FlipsideViewController.h */,
 				0CB9E0C015A6F5D60076F8C7 /* FlipsideViewController.m */,
-				0CB9E0D415A6F8500076F8C7 /* GridMonitor.h */,
-				0CB9E0D515A6F8500076F8C7 /* GridMonitor.m */,
+				962A653415BBDE6500887003 /* Monitoring */,
 				96A38F8C15ADC5E200DDC073 /* Notification */,
 				0CB9E0C215A6F5D60076F8C7 /* MainViewController_iPhone.xib */,
 				0CB9E0C515A6F5D60076F8C7 /* MainViewController_iPad.xib */,
@@ -281,6 +292,23 @@
 				96DA58DE15AE2640004B4C57 /* window-shade-red@2x.png */,
 			);
 			name = "Shade illustrations";
+			sourceTree = "<group>";
+		};
+		962A653415BBDE6500887003 /* Monitoring */ = {
+			isa = PBXGroup;
+			children = (
+				0CB9E0D415A6F8500076F8C7 /* GridMonitor.h */,
+				0CB9E0D515A6F8500076F8C7 /* GridMonitor.m */,
+				96C2AEC315BBE9AE000F7A66 /* Monitor.h */,
+				96C2AEC415BBE9AE000F7A66 /* Monitor.m */,
+				962A653815BBDFB400887003 /* TeaError.h */,
+				962A653915BBDFB400887003 /* TeaError.m */,
+				962A653515BBDE9400887003 /* ChrisMonitor.h */,
+				962A653615BBDE9400887003 /* ChrisMonitor.m */,
+				96C2AEC715BBEE9D000F7A66 /* CanITurnItOn.h */,
+				96C2AEC815BBEE9D000F7A66 /* CanITurnItOn.m */,
+			);
+			name = Monitoring;
 			sourceTree = "<group>";
 		};
 		96489FBD15AEE18700011E12 /* Logo */ = {
@@ -510,6 +538,10 @@
 				0CB9E0D615A6F8500076F8C7 /* GridMonitor.m in Sources */,
 				96A38F8915ADB67000DDC073 /* NotificationViewController.m in Sources */,
 				962A653315BBD00300887003 /* Utilities.m in Sources */,
+				962A653715BBDE9400887003 /* ChrisMonitor.m in Sources */,
+				962A653A15BBDFB400887003 /* TeaError.m in Sources */,
+				96C2AEC515BBE9AE000F7A66 /* Monitor.m in Sources */,
+				96C2AEC915BBEE9D000F7A66 /* CanITurnItOn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

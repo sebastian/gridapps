@@ -8,8 +8,20 @@
 
 #import "GridMonitor.h"
 #import "Utilities.h"
+#import "TeaError.h"
+
+#import "Monitor.h"
+#import "ChrisMonitor.h"
+#import "CanITurnItOn.h"
 
 @implementation GridMonitor
+
+typedef enum {
+  GridGood = 1,
+  GridBad = 2,
+  DoNotKnow = 3,
+} MonitorCheck;
+
 
 #pragma mark - Init
 
@@ -24,45 +36,67 @@
 
 #pragma mark - Monitoring
 
+- (MonitorCheck) checkMonitors 
+{
+  NSArray *monitors = 
+      [NSArray arrayWithObjects:
+          [[ChrisMonitor alloc] init],
+          [[CanITurnItOn alloc] init],
+            nil];
+  
+  __block TeaError *error;
+  __block BOOL returnOK;
+  [monitors enumerateObjectsUsingBlock:^(Monitor *monitor, NSUInteger idx, BOOL *stop) {
+    BOOL result = [monitor gridStatus:&error];
+    if (error == nil) {
+      *stop = YES;
+      returnOK = result;
+    }
+  }];
+  
+  if (error) {
+    [Utilities showAlert:[error title] message:[error description] msgIdentity:[error identifier]];
+    return DoNotKnow;
+  }
 
-// http://home.elsmorian.com:8080/json
-// {"freq": 4502323.0, "instruction": "yes"}
-// To set the frequency: 
-// http://home.elsmorian.com:8080/setfreq?freq=49.9
+  if (returnOK)
+    return GridGood;
+  else
+    return GridBad;
+}
 
 - (void) startMonitor
 {
   BOOL previousState = YES;
   BOOL firstRun = YES;
+  
   while (monitorRunning) {
-    // Get the state from the webserver
-    NSURL *url = [NSURL URLWithString:@"http://home.elsmorian.com:8080/json"];
-    NSData *jsonData = [NSData dataWithContentsOfURL:url];
-    NSError *jsonError;
-    if (jsonData != nil) {
-      NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&jsonError];
-      if (jsonError) {
-        [Utilities showAlert:@"Oh my" message:@"Something seems to be terribly wrong at the moment. Maybe try again later?"  msgIdentity:@"CannotParseJson"];
+    MonitorCheck result = [self checkMonitors];
 
-      } else {
-        BOOL shouldMakeTea;
-        if ([[json objectForKey:@"instruction"] isEqualToString:@"yes"]) {
-          shouldMakeTea = YES;
-        } else {
-          shouldMakeTea = NO;
-        }
-        if (firstRun || previousState != shouldMakeTea) {
-          dispatch_async(dispatch_get_main_queue(), ^{
-            _callback(shouldMakeTea);
-          });
-        }
-        firstRun = NO;
-        previousState = shouldMakeTea;
-      }
-    } else {
-      [Utilities showAlert:@"What a shame" message:@"It seems we cannot connect to the tea-server. Are you certain you are connected to the internet? Maybe try again later?" msgIdentity:@"NoInternet"];
-
+    BOOL currentGridState = previousState;
+    switch (result) {
+      case GridGood:
+        currentGridState = YES;
+        break;
+        
+      case GridBad:
+        currentGridState = NO;
+        break;
+        
+      case DoNotKnow:
+        // We have no idea...
+        break;
+        
+      default:
+        break;
     }
+    if (firstRun || previousState != currentGridState) {
+      dispatch_async(dispatch_get_main_queue(), ^{
+        _callback(currentGridState);
+      });
+    }
+    firstRun = NO;
+    previousState = currentGridState;
     sleep(1);
   }
 }
