@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1296</int>
+		<int key="IBDocument.SystemTarget">1280</int>
 		<string key="IBDocument.SystemVersion">11E53</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
 		<string key="IBDocument.AppKitVersion">1138.47</string>
@@ -55,26 +55,26 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIShowsVerticalScrollIndicator">NO</bool>
 						<object class="NSMutableString" key="IBUIText">
-							<bytes key="NS.bytes">Qm9pbGluZyBhIGtldHRsZT8gQ291bGQgeW91IHdhaXQgNSBtaW51dGVzPwoKIlRlYT8iIHNob3dzIHRo
-ZSB1c2VyIHRoZSBjdXJyZW50IHN0YXR1cyBvZiB0aGUgVUsgZWxlY3RyaWNpdHkgZ3JpZCwgdmlzdWFs
-aXNpbmcgd2hlbiB0aGUgZ3JpZCBpcyB1bmRlciBkZW1hbmQsIGFuZCB3aGVuIGl0IGlzIHByb2R1Y2lu
-ZyBleGNlc3MgZW5lcmd5LiAiVGVhPyIgY2FuIGFsc28gc2VuZCBhIG5vdGlmaWNhdGlvbiB3aGVuIHRo
-ZSBncmlkIGhhcyBiZWVuIHVuZGVyIGRlbWFuZCBidXQgaXMgbm93IGV4Y2VlZGluZyBpdC4gVXNpbmcg
-YXBwbGlhbmNlcyBzdWNoIGFzIGtldHRsZXMgd2hlbiB0aGVyZSBpcyBsZXNzIGRlbWFuZCBjYW4gaGVs
-cCBsb3dlciB0aGUgY2FyYm9uIGVtaXNzaW9ucyBvZiB0aGUgZ3JpZC4KCiJUZWE/IiBhbGxvd3MgeW91
-IHRvOwoqIFZpc3VhbGlzZSB0aGUgc3RhdHVzIG9mIHRoZSBncmlkIGluIHJlYWx0aW1lCiogUmVjZWl2
-ZSBhIHB1c2ggbm90aWZpY2F0aW9uIHdoZW4gdGhlIGdyaWQgaXMgdW5kZXIgbGVzcyBkZW1hbmQuCgpU
-aGUgZWxlY3RyaWNhbCBncmlkIGlzIGNvbnN0YW50bHkgdHJ5aW5nIHRvIG1hdGNoIHBvd2VyIHN1cHBs
-eSB0byBkZW1hbmQsIGFuZCBhdCB2YXJpb3VzIHRpbWVzIHRocm91Z2hvdXQgdGhlIGRheSB0aGUgZ3Jp
-ZCBpcyBlaXRoZXIgb3Zlci1wcm9kdWNpbmcgcmVzdWx0aW5nIGluIGV4Y2VzcyBwb3dlciwgb3IgdW5k
-ZXItcHJvZHVjaW5nIGFuZCBzdHJ1Z2dsaW5nIHRvIGtlZXAgdXAgd2l0aCBkZW1hbmQuIEluIG9yZGVy
-IHRvIGtlZXAgdXAgd2l0aCBzdWRkZW4gZGVtYW5kIGZvciBwb3dlciwgdGhlIGdyaWQgb2Z0ZW4gdXNl
-cyBtb3JlIGluZWZmaWNpZW50IG1lYW5zIG9mIGdlbmVyYXRpb24sIHdoaWNoIHByb2R1Y2VzCm1vcmUg
-Y2FyYm9uIGRpb3hpZGUgZXF1aXZhbGVudCBlbWlzc2lvbnMuCgoiVGVhPyIgdmlzdWFsaXNlcyB0aGUg
-Z3JpZCBzbyB1c2VycyBjYW4gZGVjaWRlIHdlYXRoZXIgdGhleSB3YW50IGEgY29mZmVlIG9yIHRlYSBu
-b3csIG9yIGlmIHRoZXkgd2lzaCB0byB3YWl0IHVudGlsIHRoZSBncmlkIGlzIHVuZGVyIGxlc3MgZGVt
-YW5kLgoKVG8gZmluZCBvdXQgbW9yZSBzZWUgIlRlYT8iIG9uIHRoZSBBcHAgU3RvcmUsIG9yIHZpc2l0
-ICJUZWE/Ii5jb20KA</bytes>
+							<bytes key="NS.bytes">Qm9pbGluZyBhIGtldHRsZT8gQ291bGQgeW91IHdhaXQgNSBtaW51dGVzPwoKVGVhPyBzaG93cyB0aGUg
+dXNlciB0aGUgY3VycmVudCBzdGF0dXMgb2YgdGhlIFVLIGVsZWN0cmljaXR5IGdyaWQsIHZpc3VhbGlz
+aW5nIHdoZW4gdGhlIGdyaWQgaXMgdW5kZXIgZGVtYW5kLCBhbmQgd2hlbiBpdCBpcyBwcm9kdWNpbmcg
+ZXhjZXNzIGVuZXJneS4gVGVhPyBjYW4gYWxzbyBzZW5kIGEgbm90aWZpY2F0aW9uIHdoZW4gdGhlIGdy
+aWQgaGFzIGJlZW4gdW5kZXIgZGVtYW5kIGJ1dCBpcyBub3cgZXhjZWVkaW5nIGl0LiBVc2luZyBhcHBs
+aWFuY2VzIHN1Y2ggYXMga2V0dGxlcyB3aGVuIHRoZXJlIGlzIGxlc3MgZGVtYW5kIGNhbiBoZWxwIGxv
+d2VyIHRoZSBjYXJib24gZW1pc3Npb25zIG9mIHRoZSBncmlkLgoKVGVhPyBhbGxvd3MgeW91IHRvOwot
+IFZpc3VhbGlzZSB0aGUgc3RhdHVzIG9mIHRoZSBncmlkIGluIHJlYWx0aW1lCi0gUmVjZWl2ZSBhIHB1
+c2ggbm90aWZpY2F0aW9uIHdoZW4gdGhlIGdyaWQgaXMgdW5kZXIgbGVzcyBkZW1hbmQuCgpUaGUgZWxl
+Y3RyaWNhbCBncmlkIGlzIGNvbnN0YW50bHkgdHJ5aW5nIHRvIG1hdGNoIHBvd2VyIHN1cHBseSB0byBk
+ZW1hbmQsIGFuZCBhdCB2YXJpb3VzIHRpbWVzIHRocm91Z2hvdXQgdGhlIGRheSB0aGUgZ3JpZCBpcyBl
+aXRoZXIgb3Zlci1wcm9kdWNpbmcgcmVzdWx0aW5nIGluIGV4Y2VzcyBwb3dlciwgb3IgdW5kZXItcHJv
+ZHVjaW5nIGFuZCBzdHJ1Z2dsaW5nIHRvIGtlZXAgdXAgd2l0aCBkZW1hbmQuIEluIG9yZGVyIHRvIGtl
+ZXAgdXAgd2l0aCBzdWRkZW4gZGVtYW5kIGZvciBwb3dlciwgdGhlIGdyaWQgb2Z0ZW4gdXNlcyBtb3Jl
+IGluZWZmaWNpZW50IG1lYW5zIG9mIGdlbmVyYXRpb24sIHdoaWNoIHByb2R1Y2VzCm1vcmUgY2FyYm9u
+IGRpb3hpZGUgZXF1aXZhbGVudCBlbWlzc2lvbnMuCgpUZWE/IHZpc3VhbGlzZXMgdGhlIGdyaWQgc28g
+dXNlcnMgY2FuIGRlY2lkZSB3ZWF0aGVyIHRoZXkgd2FudCBhIGNvZmZlZSBvciB0ZWEgbm93LCBvciBp
+ZiB0aGV5IHdpc2ggdG8gd2FpdCB1bnRpbCB0aGUgZ3JpZCBpcyB1bmRlciBsZXNzIGRlbWFuZC4KClRv
+IGZpbmQgb3V0IG1vcmUgc2VlIFRlYT8gb24gdGhlIEFwcCBTdG9yZSwgb3IgdmlzaXQgdGVhLmtsZS5p
+bw</bytes>
 						</object>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocapitalizationType">2</int>
@@ -104,7 +104,7 @@ ICJUZWE/Ii5jb20KA</bytes>
 						<array key="IBUIItems">
 							<object class="IBUINavigationItem" id="553200710">
 								<reference key="IBUINavigationBar" ref="871675769"/>
-								<string key="IBUITitle">What is this?</string>
+								<string key="IBUITitle">What is Tea?</string>
 								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="854562692">
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<int key="IBUIStyle">1</int>
@@ -251,10 +251,6 @@ ICJUZWE/Ii5jb20KA</bytes>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1296" key="NS.object.0"/>
-		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<string key="IBCocoaTouchPluginVersion">1181</string>

@@ -248,6 +248,7 @@
 		0CB9E0B015A6F5D60076F8C7 /* kettle */ = {
 			isa = PBXGroup;
 			children = (
+				0CB9E0B215A6F5D60076F8C7 /* kettle-Info.plist */,
 				0CB9E0B915A6F5D60076F8C7 /* AppDelegate.h */,
 				0CB9E0BA15A6F5D60076F8C7 /* AppDelegate.m */,
 				0CB9E0BC15A6F5D60076F8C7 /* MainViewController.h */,
@@ -277,7 +278,6 @@
 				96EEFD9715A9C95A008FE3A3 /* icon.png */,
 				96EEFD9815A9C95A008FE3A3 /* icon@2x.png */,
 				0CC9D51D15A72A3C007C712B /* audio-source.txt */,
-				0CB9E0B215A6F5D60076F8C7 /* kettle-Info.plist */,
 				0CB9E0B315A6F5D60076F8C7 /* InfoPlist.strings */,
 				0CB9E0B615A6F5D60076F8C7 /* main.m */,
 				0CB9E0B815A6F5D60076F8C7 /* kettle-Prefix.pch */,
@@ -595,7 +595,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sebastian Probst Eide (9NVYP52RY9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sebastian Probst Eide (9NVYP52RY9)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -610,6 +611,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "67DB6C08-214B-4204-BC25-61AEE7731933";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "67DB6C08-214B-4204-BC25-61AEE7731933";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -621,6 +624,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kleio";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -630,6 +634,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "8258E5B5-DF2C-4B9E-B1EE-B1A6306B2758";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -645,8 +650,8 @@
 				GCC_PREFIX_HEADER = "kettle/kettle-Prefix.pch";
 				INFOPLIST_FILE = "kettle/kettle-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8FF24B04-CDFC-4B1D-8748-CB24093A1F00";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8FF24B04-CDFC-4B1D-8748-CB24093A1F00";
+				PROVISIONING_PROFILE = "67DB6C08-214B-4204-BC25-61AEE7731933";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "67DB6C08-214B-4204-BC25-61AEE7731933";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -654,14 +659,14 @@
 		0CB9E0CF15A6F5D60076F8C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kleio";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kleio";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kettle/kettle-Prefix.pch";
 				INFOPLIST_FILE = "kettle/kettle-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "8258E5B5-DF2C-4B9E-B1EE-B1A6306B2758";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8258E5B5-DF2C-4B9E-B1EE-B1A6306B2758";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
