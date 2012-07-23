@@ -15,6 +15,7 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, CLLocationManagerDelegate>
 {
   CLLocationManager *locationManager;
+  UIInterfaceOrientation currentOrientation;
 }
 
 @property (strong, nonatomic) IBOutlet NotificationViewController *notificationViewController;

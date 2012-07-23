@@ -94,8 +94,8 @@ typedef enum {
       dispatch_async(dispatch_get_main_queue(), ^{
         _callback(currentGridState);
       });
+      firstRun = NO;
     }
-    firstRun = NO;
     previousState = currentGridState;
     sleep(1);
   }

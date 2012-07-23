@@ -39,8 +39,9 @@
   pendingTapInNotification = NO;
   windowShadeHappy = [UIImage imageNamed:@"window-shade-green.png"];
   windowShadeSad = [UIImage imageNamed:@"window-shade-red.png"];;
+  windowShadeIndifferent = [UIImage imageNamed:@"window-shade-orange.png"];;
   
-  [self showHappyNotificationWithTitle:@"Hi there!" andMessage:@"Checking if this is a good time for tea!"];
+  [self showUnknownStateNotificationWithTitle:@"Hi there!" andMessage:@"Checking if this is a good time for tea!"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,6 +99,27 @@
   
   [self showAndHideNotificationsInATimelyFashion];
 }
+
+- (void) showUnknownStateNotificationWithTitle:(NSString *)title andMessage:(NSString *)message
+{
+  notificationHeaderLabel.text = title;
+  notificationLabel.text = message;
+  
+  self.notificationButton.hidden = YES;
+  
+  // Scale the size of the view, since we do want to
+  // show the notification button
+  [UIView animateWithDuration:.2 animations:^{
+    CGRect frame = self.view.frame;
+    frame.size.height = initialFrame.size.height - BUTTON_SIZE_DIFF;
+    self.view.frame = frame;
+  }];
+  
+  self.windowShadeImage.image = windowShadeIndifferent;
+  
+  [self showAndHideNotificationsInATimelyFashion];
+}
+
 
 - (void) showAndHideNotificationsInATimelyFashion
 {

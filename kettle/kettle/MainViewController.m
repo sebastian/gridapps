@@ -45,8 +45,7 @@
 {
   [super viewDidLoad];
   [self loadPhotos];
-  [self loadImagesForOrientation:UIInterfaceOrientationPortrait];
-
+  
   self.happyAnimViewLandscape.animationDuration = 5.;
   self.happyAnimViewLandscape.animationRepeatCount = 0;
   self.happyAnimViewPortrait.animationDuration = 5.;
@@ -59,22 +58,26 @@
     CGFloat happyAlpha;
     if (gridIsOK) {
       happyAlpha = 1.0;
-      [self.happyAnimViewLandscape startAnimating];
       [self.happyAnimViewPortrait startAnimating];
+      [self.happyAnimViewLandscape startAnimating];
       [notificationViewController showHappyNotificationWithTitle:@"Great!" andMessage:@"Pop the kettle on, the grid is meeting demand!"];
 
     } else {
       happyAlpha = 0.0;
-      [self.happyAnimViewLandscape stopAnimating];
       [self.happyAnimViewPortrait stopAnimating];
-      [notificationViewController showSadNotificationWithTitle:@"Hold up!" andMessage:@" The grid is under demand, maybe wait a bit before boiling the kettle..."];        
+      [self.happyAnimViewLandscape stopAnimating];
+      [notificationViewController showSadNotificationWithTitle:@"Hold up!" andMessage:@" The grid is under demand, maybe wait a bit before boiling the kettle..."];
     }
+    [self setImagesForCurrentOrientation];
     [UIView animateWithDuration:1. animations:^{
       self.happyView.alpha = happyAlpha;
     }];
   }];
   
   [self.view addSubview:notificationViewController.view];
+  
+  currentOrientation = self.interfaceOrientation;
+  [self setImagesForCurrentOrientation];
 }
 
 - (void)viewDidUnload
@@ -89,29 +92,34 @@
   [self setHappyAnimViewLandscape:nil];
 
   [super viewDidUnload];
-  // Release any retained subviews of the main view.
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-  [self loadImagesForOrientation:toInterfaceOrientation];
+  currentOrientation = toInterfaceOrientation;
+  [self setImagesForCurrentOrientation];
 }
 
-- (void)loadImagesForOrientation:(UIInterfaceOrientation)orientation
+- (void) setImagesForCurrentOrientation
 {
-  if (orientation == UIInterfaceOrientationPortrait ||
-      orientation == UIInterfaceOrientationPortraitUpsideDown) {
-    self.happyAnimViewPortrait.hidden = NO;    
+  // We need to make image views that are to be used for the given
+  // view visible, and the rest hidden.
+  if (UIDeviceOrientationIsPortrait(currentOrientation) == YES) {
+    
+    self.happyAnimViewPortrait.hidden = NO;
     self.happyImageViewPortrait.hidden = NO;
     self.sadImageViewPortrait.hidden = NO;
+    
     self.happyAnimViewLandscape.hidden = YES;
     self.happyImageViewLandscape.hidden = YES;
     self.sadImageViewLandscape.hidden = YES;
-  } else if (orientation == UIInterfaceOrientationLandscapeRight ||
-             orientation == UIInterfaceOrientationLandscapeLeft) {
-    self.happyAnimViewPortrait.hidden = YES; 
+    
+  } else if (UIDeviceOrientationIsLandscape(currentOrientation) == YES) {
+
+    self.happyAnimViewPortrait.hidden = YES;
     self.happyImageViewPortrait.hidden = YES;
     self.sadImageViewPortrait.hidden = YES;
+    
     self.happyAnimViewLandscape.hidden = NO;
     self.happyImageViewLandscape.hidden = NO;
     self.sadImageViewLandscape.hidden = NO;
@@ -168,11 +176,11 @@
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        [self dismissModalViewControllerAnimated:YES];
-    } else {
-        [self.flipsidePopoverController dismissPopoverAnimated:YES];
-    }
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    [self dismissModalViewControllerAnimated:YES];
+  } else {
+    [self.flipsidePopoverController dismissPopoverAnimated:YES];
+  }
 }
 
 - (IBAction)showInfo:(UIButton *)infoButton

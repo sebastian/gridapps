@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1296</int>
+		<int key="IBDocument.SystemTarget">1536</int>
 		<string key="IBDocument.SystemVersion">11E53</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2818</string>
 		<string key="IBDocument.AppKitVersion">1138.47</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1181</string>
+			<string key="NS.object.0">1900</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
+			<string>IBUIButton</string>
+			<string>IBUICustomObject</string>
 			<string>IBUIImageView</string>
 			<string>IBUILabel</string>
-			<string>IBUICustomObject</string>
-			<string>IBUIButton</string>
-			<string>IBUITapGestureRecognizer</string>
 			<string>IBUIPanGestureRecognizer</string>
+			<string>IBUITapGestureRecognizer</string>
 			<string>IBUIView</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -47,31 +47,31 @@
 							<object class="IBUIImageView" id="606168153">
 								<reference key="NSNextResponder" ref="966120192"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrameSize">{768, 1004}</string>
+								<string key="NSFrameSize">{768, 1024}</string>
 								<reference key="NSSuperview" ref="966120192"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1016520095"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-								<int key="IBUIContentMode">2</int>
+								<int key="IBUIContentMode">9</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 							</object>
 							<object class="IBUIImageView" id="1016520095">
 								<reference key="NSNextResponder" ref="966120192"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrameSize">{768, 1004}</string>
+								<string key="NSFrameSize">{768, 1024}</string>
 								<reference key="NSSuperview" ref="966120192"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="910448908"/>
+								<reference key="NSNextKeyView" ref="362409974"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-								<int key="IBUIContentMode">2</int>
+								<int key="IBUIContentMode">9</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 							</object>
 						</array>
-						<string key="NSFrameSize">{768, 1004}</string>
+						<string key="NSFrame">{{0, -20}, {768, 1024}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="606168153"/>
@@ -90,37 +90,36 @@
 							<object class="IBUIImageView" id="647977874">
 								<reference key="NSNextResponder" ref="362409974"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrameSize">{768, 1004}</string>
+								<string key="NSFrameSize">{768, 1024}</string>
 								<reference key="NSSuperview" ref="362409974"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="254653438"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-								<int key="IBUIContentMode">2</int>
+								<int key="IBUIContentMode">9</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 							</object>
 							<object class="IBUIImageView" id="254653438">
 								<reference key="NSNextResponder" ref="362409974"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrameSize">{768, 1004}</string>
+								<string key="NSFrameSize">{768, 1024}</string>
 								<reference key="NSSuperview" ref="362409974"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="966120192"/>
+								<reference key="NSNextKeyView" ref="316065651"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-								<int key="IBUIContentMode">2</int>
+								<int key="IBUIContentMode">9</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 							</object>
 							<object class="IBUIImageView" id="316065651">
 								<reference key="NSNextResponder" ref="362409974"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrameSize">{768, 1004}</string>
+								<string key="NSFrameSize">{768, 1024}</string>
 								<reference key="NSSuperview" ref="362409974"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="1004217438"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -131,9 +130,10 @@
 							<object class="IBUIImageView" id="1004217438">
 								<reference key="NSNextResponder" ref="362409974"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrameSize">{768, 1004}</string>
+								<string key="NSFrameSize">{768, 1024}</string>
 								<reference key="NSSuperview" ref="362409974"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="910448908"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -142,7 +142,7 @@
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 							</object>
 						</array>
-						<string key="NSFrameSize">{768, 1004}</string>
+						<string key="NSFrame">{{0, -20}, {768, 1024}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="647977874"/>
@@ -184,13 +184,13 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<nil key="IBUIHighlightedColor"/>
+								<int key="IBUIBaselineAdjustment">0</int>
 								<string key="IBUIText">Jolly good!</string>
 								<object class="NSColor" key="IBUITextColor" id="96164623">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
 								</object>
-								<nil key="IBUIHighlightedColor"/>
-								<int key="IBUIBaselineAdjustment">0</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">25</double>
@@ -201,6 +201,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+								<int key="IBUIAutoshrinkMode">0</int>
 							</object>
 							<object class="IBUILabel" id="212702291">
 								<reference key="NSNextResponder" ref="910448908"/>
@@ -215,11 +216,11 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<string key="IBUIText">Dear Grid, please answer my qstn</string>
-								<reference key="IBUITextColor" ref="96164623"/>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUINumberOfLines">3</int>
+								<string key="IBUIText">Dear Grid, please answer my qstn</string>
+								<reference key="IBUITextColor" ref="96164623"/>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">14</double>
@@ -230,6 +231,8 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+								<int key="IBUIAutoshrinkMode">0</int>
+								<double key="preferredMaxLayoutWidth">250</double>
 							</object>
 							<object class="IBUIButton" id="359799267">
 								<reference key="NSNextResponder" ref="910448908"/>
@@ -289,6 +292,7 @@
 						<string key="NSFrame">{{730, 965}, {18, 19}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -320,7 +324,7 @@
 				<string key="NSFrame">{{0, 20}, {768, 1004}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="362409974"/>
+				<reference key="NSNextKeyView" ref="966120192"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MC4yNQA</bytes>
@@ -804,16 +808,12 @@
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1296" key="NS.object.0"/>
-		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">window-shade-red.png</string>
 			<string key="NS.object.0">{300, 290}</string>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">1181</string>
+		<string key="IBCocoaTouchPluginVersion">1900</string>
 	</data>
 </archive>
