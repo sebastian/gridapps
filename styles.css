@@ -60,7 +60,13 @@ span.highlight {
 }
 
 #text-inner img {
-	margin-bottom: 30px;
-	margin-left: -58px;
-	padding-left: 50%;
+	margin: 0 0 30px -58px;
+	padding: 0 0 0 50%;
+}
+
+a {
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+	display: block;
 }
