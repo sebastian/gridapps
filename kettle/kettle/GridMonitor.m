@@ -69,10 +69,15 @@ typedef enum {
 {
   BOOL previousState = YES;
   BOOL firstRun = YES;
+  BOOL goodRun = YES;
   
   while (monitorRunning) {
+    // We anticipate that this will successful at
+    // determining the grid state
+    goodRun = YES;
+    
     MonitorCheck result = [self checkMonitors];
-
+    
     BOOL currentGridState = previousState;
     switch (result) {
       case GridGood:
@@ -85,18 +90,19 @@ typedef enum {
         
       case DoNotKnow:
         // We have no idea...
+        goodRun = NO;
         break;
         
       default:
         break;
     }
-    if (firstRun || previousState != currentGridState) {
+    if (goodRun && (firstRun || previousState != currentGridState)) {
       dispatch_async(dispatch_get_main_queue(), ^{
         _callback(currentGridState);
       });
       firstRun = NO;
+      previousState = currentGridState;
     }
-    previousState = currentGridState;
     sleep(1);
   }
 }

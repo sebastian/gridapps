@@ -644,14 +644,14 @@
 		0CB9E0CE15A6F5D60076F8C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sebastian Probst Eide (9NVYP52RY9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sebastian Probst Eide (9NVYP52RY9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kettle/kettle-Prefix.pch";
 				INFOPLIST_FILE = "kettle/kettle-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "67DB6C08-214B-4204-BC25-61AEE7731933";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "67DB6C08-214B-4204-BC25-61AEE7731933";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
