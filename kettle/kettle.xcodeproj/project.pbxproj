@@ -649,9 +649,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kettle/kettle-Prefix.pch";
 				INFOPLIST_FILE = "kettle/kettle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos5.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -664,9 +666,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kettle/kettle-Prefix.pch";
 				INFOPLIST_FILE = "kettle/kettle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8258E5B5-DF2C-4B9E-B1EE-B1A6306B2758";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8258E5B5-DF2C-4B9E-B1EE-B1A6306B2758";
+				SDKROOT = iphoneos5.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
