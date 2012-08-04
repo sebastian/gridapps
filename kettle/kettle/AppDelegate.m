@@ -11,7 +11,7 @@
 #import "MainViewController.h"
 #import "GridMonitor.h"
 #import "Utilities.h"
-#import "Crittercism.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -20,10 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  // So we can get error reporting
-  [Crittercism initWithAppID: @"501acffcbe790e5366000008"
-                      andKey:@"q4nvudsmxes3wzt2fzquc6pjyjc0"
-                   andSecret:@"shgcdaphxj4w5ab96jrqzfdpm8numoel"];
+  [Crashlytics startWithAPIKey:@"5ae0684af35b6797c986c7e29e5dfe7bbf562ce7"];
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
@@ -83,7 +80,7 @@
 // Delegation methods
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken
 {
-  NSURL *url = [NSURL URLWithString:@"http://home.elsmorian.com:8081/requestnotify"];
+  NSURL *url = [NSURL URLWithString:@"http://home.elsmorian.com:8080/requestnotify"];
   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
   [request setHTTPMethod:@"POST"];
 

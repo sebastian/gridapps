@@ -33,8 +33,6 @@
 		96C2AEC515BBE9AE000F7A66 /* Monitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2AEC415BBE9AE000F7A66 /* Monitor.m */; };
 		96C2AEC915BBEE9D000F7A66 /* CanITurnItOn.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2AEC815BBEE9D000F7A66 /* CanITurnItOn.m */; };
 		96C6A36B15CD07470064EA11 /* libCrittercismCrashOnly_v3_2_5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C6A35115CD07470064EA11 /* libCrittercismCrashOnly_v3_2_5.a */; };
-		96C6A36E15CD07700064EA11 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C6A36D15CD07700064EA11 /* QuartzCore.framework */; };
-		96C6A37015CD077E0064EA11 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C6A36F15CD077E0064EA11 /* SystemConfiguration.framework */; };
 		96DA58DF15AE2640004B4C57 /* window-shade-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DA58DB15AE2640004B4C57 /* window-shade-green.png */; };
 		96DA58E015AE2640004B4C57 /* window-shade-green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DA58DC15AE2640004B4C57 /* window-shade-green@2x.png */; };
 		96DA58E115AE2640004B4C57 /* window-shade-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DA58DD15AE2640004B4C57 /* window-shade-red.png */; };
@@ -97,6 +95,7 @@
 		96E915A215BDAD6F000781C3 /* window-shade-orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E915A015BDAD6F000781C3 /* window-shade-orange@2x.png */; };
 		96EEFD9915A9C95A008FE3A3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EEFD9715A9C95A008FE3A3 /* icon.png */; };
 		96EEFD9A15A9C95A008FE3A3 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EEFD9815A9C95A008FE3A3 /* icon@2x.png */; };
+		96FCFCB715CD8D3F00BD858F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FCFCB615CD8D3F00BD858F /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,8 +168,6 @@
 		96C6A36815CD07470064EA11 /* PLCrashReportThreadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportThreadInfo.h; sourceTree = "<group>"; };
 		96C6A36915CD07470064EA11 /* PLCrashSignalHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashSignalHandler.h; sourceTree = "<group>"; };
 		96C6A36A15CD07470064EA11 /* PLCrashSysctl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashSysctl.h; sourceTree = "<group>"; };
-		96C6A36D15CD07700064EA11 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		96C6A36F15CD077E0064EA11 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		96DA58DB15AE2640004B4C57 /* window-shade-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window-shade-green.png"; sourceTree = "<group>"; };
 		96DA58DC15AE2640004B4C57 /* window-shade-green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window-shade-green@2x.png"; sourceTree = "<group>"; };
 		96DA58DD15AE2640004B4C57 /* window-shade-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window-shade-red.png"; sourceTree = "<group>"; };
@@ -233,6 +230,7 @@
 		96E915A015BDAD6F000781C3 /* window-shade-orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window-shade-orange@2x.png"; sourceTree = "<group>"; };
 		96EEFD9715A9C95A008FE3A3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		96EEFD9815A9C95A008FE3A3 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		96FCFCB615CD8D3F00BD858F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,14 +238,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96C6A37015CD077E0064EA11 /* SystemConfiguration.framework in Frameworks */,
-				96C6A36E15CD07700064EA11 /* QuartzCore.framework in Frameworks */,
 				9646DFE815AF15190086D286 /* AVFoundation.framework in Frameworks */,
 				0CB9E0D915A702F60076F8C7 /* CoreLocation.framework in Frameworks */,
 				0CB9E0AB15A6F5D60076F8C7 /* UIKit.framework in Frameworks */,
 				0CB9E0AD15A6F5D60076F8C7 /* Foundation.framework in Frameworks */,
 				0CB9E0AF15A6F5D60076F8C7 /* CoreGraphics.framework in Frameworks */,
 				96C6A36B15CD07470064EA11 /* libCrittercismCrashOnly_v3_2_5.a in Frameworks */,
+				96FCFCB715CD8D3F00BD858F /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +272,7 @@
 		0CB9E0A915A6F5D60076F8C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				96C6A36F15CD077E0064EA11 /* SystemConfiguration.framework */,
-				96C6A36D15CD07700064EA11 /* QuartzCore.framework */,
+				96FCFCB615CD8D3F00BD858F /* Crashlytics.framework */,
 				9646DFE715AF15190086D286 /* AVFoundation.framework */,
 				0CB9E0D815A702F60076F8C7 /* CoreLocation.framework */,
 				0CB9E0AA15A6F5D60076F8C7 /* UIKit.framework */,
@@ -493,6 +489,7 @@
 				0CB9E0A215A6F5D60076F8C7 /* Sources */,
 				0CB9E0A315A6F5D60076F8C7 /* Frameworks */,
 				0CB9E0A415A6F5D60076F8C7 /* Resources */,
+				96FCFCB415CD8C7500BD858F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -610,6 +607,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		96FCFCB415CD8C7500BD858F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 5ae0684af35b6797c986c7e29e5dfe7bbf562ce7";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0CB9E0A215A6F5D60076F8C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -724,6 +737,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kettle/kettle-Prefix.pch";
 				INFOPLIST_FILE = "kettle/kettle-Info.plist";
@@ -745,6 +762,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Kleio";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kleio";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kettle/kettle-Prefix.pch";
 				INFOPLIST_FILE = "kettle/kettle-Info.plist";
