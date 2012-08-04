@@ -11,6 +11,7 @@
 #import "MainViewController.h"
 #import "GridMonitor.h"
 #import "Utilities.h"
+#import "Crittercism.h"
 
 @implementation AppDelegate
 
@@ -19,6 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  // So we can get error reporting
+  [Crittercism initWithAppID: @"501acffcbe790e5366000008"
+                      andKey:@"q4nvudsmxes3wzt2fzquc6pjyjc0"
+                   andSecret:@"shgcdaphxj4w5ab96jrqzfdpm8numoel"];
+  
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
   // Only iPhone like devices support the translucent style.
